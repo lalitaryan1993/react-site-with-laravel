@@ -5,5 +5,271 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+
+}
+
+.topBannerOverlay{
+    position: absolute;
+    min-height: 550px;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.topContent{
+    margin-top: 15em;
+}
+
+.topTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.topSubTitle{
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+
+}
+
+.designIcon{
+    width: 80px;
+    height: 80px;
+}
+
+.serviceCard {
+    margin: 5px;
+    height: 22rem;
+    padding: 60px 30px 60px 30px;
+    box-shadow: 0 0 8px 0 rgba(4,55,105,0.2);
+}
+
+.serviceCard:hover {
+    margin: 5px;
+    height: 22rem;
+    padding: 60px 30px 60px 30px;
+    box-shadow: 0 0 16px 0 rgba(4,55,105,0.2);
+}
+
+.serviceName{
+    color: #051b35;
+    margin-top: 1rem;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
     
+}
+
+.serviceDescription{
+    color: #051b35;
+    margin-top: 1rem;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+.serviceMainTitle{
+    color: #051b35;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+
+
+}
+
+.bottomBar{
+    background: #051b35 none repeat scroll 0 0;
+    height: 3px;
+    width: 100px;
+    margin: -1.9rem auto 0 ;
+    margin-bottom: 2rem;
+}
+
+.navTitle {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navTitleScroll {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #051b35 !important;
+    text-transform: uppercase;
+}
+
+.navLogo{
+    width: 60px;
+    height: 60px;
+}
+
+.navBg{
+    transition: background-color 0.5s ease-in-out;
+    background-color: rgba(0,0,0,0.0) !important;
+}
+
+.navBgScroll{
+    transition: background-color 0.5s ease-in-out;
+    background-color: #fff !important;
+}
+
+.navItem{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(187, 182, 182) !important;
+}
+.navItem:hover{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff !important;
+}
+
+.navItemScroll{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #132e50 !important;
+}
+.navItemScroll:hover{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #05101f !important;
+}
+
+.summaryBanner{
+    background-image: url('../images/summary.jpg');
+    min-height: 400px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.summaryBannerOverlay{
+    position: absolute;
+    min-height: 400px;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.countNumber{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+
+}
+
+.countTitle{
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #DC564C;
+
+}
+
+.hrBar{
+    background: #ffffff none repeat scroll 0 0;
+    height: 2px !important;
+    width: 100px;
+    margin: 1rem auto 0 ;
+    margin-bottom: 2rem;
+}
+
+.countSection{
+    margin-top: 20%!important;
+}
+
+.cardTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+   
+}
+
+.cardSubTitle{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.workCard{
+    margin-top: 25%;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.iconBullet{
+    font-size: 16px;
+    color: #051b35;
+}
+
+.iconProject{
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.projectCard{
+    background: #fff;
+    width: 22rem;
+    border-radius: .6em;
+    margin: 1em;
+    cursor: pointer;
+    box-shadow: 0 13px 25px -5px ;
+    transition: all 0.2s ease;
+}
+
+.projectCard:hover{
+    transform: scale(1.05);
+    box-shadow: 0 13px 30px -5px ;
+}
+
+.courseImg{
+    width: 100%;
+}
+.courseViewMore{
+    color: #051b35;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+}
+.courseViewMore:hover{
+    text-decoration: none;
+}
+
+.videoCard{
+    box-shadow: 0 13px 10px -5px;
+    padding:8rem  3rem 8rem 3rem;
+    background-color: #051b35;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.videoText{
+    margin-top: 2%;
 }
