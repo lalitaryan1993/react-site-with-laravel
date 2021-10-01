@@ -21,7 +21,7 @@ class Video extends Component {
       <>
         <Container className='text-center'>
           <h1 className='serviceMainTitle'>OUR VIDEOS</h1>
-          <div className='bottom'></div>
+          <div className='bottomBar'></div>
           <Row>
             <Col lg={6} md={6} sm={12} className='videoText'>
               <p className='serviceDescription text-justify'>

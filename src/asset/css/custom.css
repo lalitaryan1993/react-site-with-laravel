@@ -273,3 +273,88 @@
 .videoText{
     margin-top: 2%;
 }
+
+.sliderBack{
+    background-color: #051b35;
+    min-height: 400px;
+}
+
+/* Review Section */
+.reviewMainTitle{
+    color: #ffffff;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+
+
+}
+
+.reviewBottomBar{
+    background: #ffffff none repeat scroll 0 0;
+    height: 3px;
+    width: 100px;
+    margin: -1.9rem auto 0 ;
+    margin-bottom: 2rem;
+}
+
+.circleImg{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #051b35;
+    border-radius: 50%;
+}
+.reviewName{
+    color: #ffffff;
+    margin-top: 1rem;
+    font-family: 'Raleway',sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+.reviewDescription{
+    color: #ffffff;
+    margin-top: 1rem;
+    font-family: 'Raleway',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+.aboutMeImage{
+    width: 550px;
+    height: 550px;
+    background-color: #051b35;
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.aboutImg{
+    height: 100%;
+    margin-top: 210px;
+}
+
+.aboutMeBody{
+    width: 100%;
+    height: 100%;
+    padding-left: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10rem;
+}
+.aboutMeTitle{
+    color: #051b35;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+.aboutMeDetails{
+    color: #051b35;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+} 	
