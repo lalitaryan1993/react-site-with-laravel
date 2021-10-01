@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import navLogo from '../../asset/images/Logo.png';
-
+import { NavLink } from 'react-router-dom';
 export class TopNavigation extends Component {
-  constructor(params) {
-    super(params);
+  constructor(props) {
+    super(props);
     this.state = {
       navBarTitle: 'navTitle',
       navBarBg: 'navBg',
       variant: 'dark',
       navBarItem: 'navItem',
+      pageTitle: props.title,
     };
   }
 
@@ -38,6 +39,7 @@ export class TopNavigation extends Component {
   render() {
     return (
       <>
+        <title>{this.state.pageTitle}</title>
         <Navbar collapseOnSelect fixed='top' expand='lg' className={this.state.navBarBg} variant={this.state.variant}>
           <Container>
             <Navbar.Brand className={this.state.navBarTitle} href='#home'>
@@ -47,23 +49,46 @@ export class TopNavigation extends Component {
             <Navbar.Collapse id='responsive-navbar-nav'>
               <Nav className='me-auto'></Nav>
               <Nav>
-                <Nav.Link className={this.state.navBarItem} href='#deets'>
-                  Home
+                <Nav.Link>
+                  {' '}
+                  <NavLink exact className={this.state.navBarItem} to='/'>
+                    HOME
+                  </NavLink>{' '}
                 </Nav.Link>
-                <Nav.Link className={this.state.navBarItem} href='#deets'>
-                  About
+
+                <Nav.Link>
+                  {' '}
+                  <NavLink exact className={this.state.navBarItem} to='/about'>
+                    ABOUT
+                  </NavLink>{' '}
                 </Nav.Link>
-                <Nav.Link className={this.state.navBarItem} href='#deets'>
-                  Services
+
+                <Nav.Link>
+                  {' '}
+                  <NavLink exact className={this.state.navBarItem} to='/service'>
+                    SERVICE
+                  </NavLink>{' '}
                 </Nav.Link>
-                <Nav.Link className={this.state.navBarItem} href='#deets'>
-                  Courses
+
+                <Nav.Link>
+                  {' '}
+                  <NavLink exact className={this.state.navBarItem} to='/course'>
+                    COURSES
+                  </NavLink>{' '}
                 </Nav.Link>
-                <Nav.Link className={this.state.navBarItem} href='#deets'>
-                  Portfolio
+
+                <Nav.Link>
+                  {' '}
+                  <NavLink exact className={this.state.navBarItem} to='/portfolio'>
+                    PORTFOLIO
+                  </NavLink>{' '}
                 </Nav.Link>
-                <Nav.Link className={this.state.navBarItem} href='#deets'>
-                  Contact
+
+                <Nav.Link>
+                  {' '}
+                  <NavLink exact className={this.state.navBarItem} to='/contact'>
+                    CONTACT US
+                  </NavLink>{' '}
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>

@@ -132,7 +132,12 @@
     font-size: 16px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
-    color: rgb(187, 182, 182) !important;
+    color: rgb(187, 182, 182) ;
+    text-decoration: none;
+}
+
+.navItem.active {
+  color:  #C6454A !important;
 }
 .navItem:hover{
     font-size: 16px;
@@ -145,7 +150,8 @@
     font-size: 16px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
-    color: #132e50 !important;
+    color: #132e50 ;
+    text-decoration: none;
 }
 .navItemScroll:hover{
     font-size: 16px;
@@ -432,4 +438,29 @@ a.instagram{
     text-decoration: none;
     color: #ffffff;    
 
+}
+/* Page Top section */
+.topFixedPage{
+    background-image: url("../images/page.png");
+    min-height: 250px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.topPageOverlay{
+    position: absolute;
+    min-height: 250px;
+    width: 100%;
+    background: rgba(19, 1, 102, 0.7);
+}
+
+.topContentPage{
+    margin-top: 8em;
+}
+.topPageTitle{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    color: #C6454A;
+    font-size: 40px;
 }
