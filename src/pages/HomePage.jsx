@@ -10,13 +10,18 @@ import Services from '../components/Services/Services';
 import Summary from '../components/Summary/Summary';
 import TopBanner from '../components/TopBanner/TopBanner';
 import TopNavigation from '../components/TopNavigation/TopNavigation';
+import Welcome from '../components/Welcome/Welcome';
 
 export class HomePage extends Component {
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
   render() {
     return (
       <>
         <TopNavigation title='Home - Lets Explore' />
         <TopBanner />
+        <Welcome />
         <Services />
         <Analysis />
         <Summary />

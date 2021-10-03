@@ -1,23 +1,23 @@
 import React, { Component, Fragment } from 'react';
-import ContactSection from '../components/ContactSection/ContactSection';
+import CourseDetails from '../components/CourseDetails/CourseDetails';
 import Footer from '../components/Footer/Footer';
 import PageTop from '../components/PageTop/PageTop';
 import TopNavigation from '../components/TopNavigation/TopNavigation';
 
-class ContactPage extends Component {
+class CourseDetailsPage extends Component {
   componentDidMount() {
     window.scroll(0, 0);
   }
   render() {
     return (
       <Fragment>
-        <TopNavigation title='Contact Us' />
-        <PageTop pageTitle='Contact Us' />
-        <ContactSection />
+        <TopNavigation title='Course Details ' />
+        <PageTop pageTitle='Course Details' />
+        <CourseDetails />
         <Footer />
       </Fragment>
     );
   }
 }
 
-export default ContactPage;
+export default CourseDetailsPage;

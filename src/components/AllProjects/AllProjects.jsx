@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class AllProjects extends Component {
   render() {
@@ -21,7 +22,12 @@ class AllProjects extends Component {
                   <Card.Text className='serviceDescription'>
                     Some quick example text to build on the card title and make up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant='primary'>Visit WebSite</Button>
+                  <Button variant='primary'>
+                    <Link className='link-style' to='/projectDetails'>
+                      {' '}
+                      View More{' '}
+                    </Link>{' '}
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -37,7 +43,12 @@ class AllProjects extends Component {
                   <Card.Text className='serviceDescription'>
                     Some quick example text to build on the card title and make up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant='primary'>Visit WebSite</Button>
+                  <Button variant='primary'>
+                    <Link className='link-style' to='/projectDetails'>
+                      {' '}
+                      View More{' '}
+                    </Link>{' '}
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -53,7 +64,12 @@ class AllProjects extends Component {
                   <Card.Text className='serviceDescription'>
                     Some quick example text to build on the card title and make up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant='primary'>Visit WebSite</Button>
+                  <Button variant='primary'>
+                    <Link className='link-style' to='/projectDetails'>
+                      {' '}
+                      View More{' '}
+                    </Link>{' '}
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -69,7 +85,12 @@ class AllProjects extends Component {
                   <Card.Text className='serviceDescription'>
                     Some quick example text to build on the card title and make up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant='primary'>Visit WebSite</Button>
+                  <Button variant='primary'>
+                    <Link className='link-style' to='/projectDetails'>
+                      {' '}
+                      View More{' '}
+                    </Link>{' '}
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -85,7 +106,12 @@ class AllProjects extends Component {
                   <Card.Text className='serviceDescription'>
                     Some quick example text to build on the card title and make up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant='primary'>Visit WebSite</Button>
+                  <Button variant='primary'>
+                    <Link className='link-style' to='/projectDetails'>
+                      {' '}
+                      View More{' '}
+                    </Link>{' '}
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -101,7 +127,12 @@ class AllProjects extends Component {
                   <Card.Text className='serviceDescription'>
                     Some quick example text to build on the card title and make up the bulk of the card's content.
                   </Card.Text>
-                  <Button variant='primary'>Visit WebSite</Button>
+                  <Button variant='primary'>
+                    <Link className='link-style' to='/projectDetails'>
+                      {' '}
+                      View More{' '}
+                    </Link>{' '}
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>

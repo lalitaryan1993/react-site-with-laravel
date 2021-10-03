@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 class Footer extends Component {
   render() {
     return (
@@ -36,33 +37,33 @@ class Footer extends Component {
 
             <Col lg='3' md={6} sm={12} className='p-5 text-justify'>
               <h2 className='footerName '>Information </h2>
-              <a className='footerLink' href='#'>
+              <Link className='footerLink' to='/about'>
                 About Me{' '}
-              </a>{' '}
+              </Link>{' '}
               <br></br>
-              <a className='footerLink' href='#'>
+              <Link className='footerLink' to='/about'>
                 Company Profile{' '}
-              </a>{' '}
+              </Link>{' '}
               <br></br>
-              <a className='footerLink' href='#'>
+              <Link className='footerLink' to='/contact'>
                 Contact Us{' '}
-              </a>{' '}
+              </Link>{' '}
               <br></br>
             </Col>
 
             <Col lg='3' md={6} sm={12} className='p-5 text-justify'>
               <h2 className='footerName '>Policy </h2>
-              <a className='footerLink' href='#'>
-                Fefund Policy{' '}
-              </a>{' '}
+              <Link className='footerLink' to='/refund'>
+                Refund Policy{' '}
+              </Link>{' '}
               <br></br>
-              <a className='footerLink' href='#'>
-                Trems And Condition{' '}
-              </a>{' '}
+              <Link className='footerLink' to='/terms'>
+                Terms And Condition{' '}
+              </Link>{' '}
               <br></br>
-              <a className='footerLink' href='#'>
-                Privaci Policy{' '}
-              </a>{' '}
+              <Link className='footerLink' to='/privacy'>
+                Privacy And Policy{' '}
+              </Link>{' '}
               <br></br>
             </Col>
           </Row>
