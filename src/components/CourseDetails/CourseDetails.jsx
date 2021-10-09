@@ -5,29 +5,53 @@ import { faUser, faClock, faClipboard, faClone, faTags, faCheckSquare } from '@f
 
 import 'video-react/dist/video-react.css';
 import { Player, BigPlayButton } from 'video-react';
+import AppUrl from '../../RestApi/AppUrl';
+import RestClient from '../../RestApi/RestClient';
+import ReactHtmlParser from 'react-html-parser';
 
 class CourseDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      courseID: props.id,
+      long_description: '',
+      long_title: '',
+      small_img: '',
+      short_description: '',
+      short_title: '',
+      skill_all: '',
+      total_duration: '',
+      total_lecture: '',
+      total_student: '',
+      video_url: '',
+    };
+  }
+  componentDidMount() {
+    RestClient.GetRequest(`${AppUrl.courseDetails}/${this.state.courseID}`)
+      .then((result) => {
+        console.log(result);
+        if (result !== null) {
+          this.setState({
+            ...result,
+          });
+        }
+        console.log(this.state);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <>
         <Container className='mt-5'>
           <Row>
             <Col lg={8} md={6} sm={12}>
-              <h1 className='courseDetailsText'> Aenean sed nibh a magna posuere tempo faucib </h1>
-              <img className='courseDetailsImg' src='https://solverwp.com/demo/html/edumint/assets/img/course/9.png' />
+              <h1 className='courseDetailsText'>{this.state.long_title}</h1>
+              <img alt='' className='courseDetailsImg' src={this.state.small_img} />
               <br></br> <br></br>
-              <p className='CourseAllDescription'>
-                The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by
-                fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab
-                quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting
-                zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. <br></br> <br></br>Sex-charged fop blew my
-                junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz,
-                get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax
-                bed. Flummoxed by job, kvetching W. zaps Iraq. <br></br> <br></br>Cozy sphinx waves quart jug of bad
-                milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs
-                jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a
-                quick jump.
-              </p>
+              <p className='CourseAllDescription'>{ReactHtmlParser(this.state.long_description)}</p>
             </Col>
 
             <Col lg={4} md={6} sm={12}>
@@ -36,15 +60,18 @@ class CourseDetails extends Component {
                 <hr />
                 <ul>
                   <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faUser} /> <span> Enrolled :</span> 1200 students
+                    <FontAwesomeIcon className='iconBullent' icon={faUser} /> <span> Enrolled :</span>{' '}
+                    {this.state.total_student} students
                   </li>
 
                   <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faClock} /> <span>Duration :</span> 2 hours
+                    <FontAwesomeIcon className='iconBullent' icon={faClock} /> <span>Duration :</span>{' '}
+                    {this.state.total_duration} hours
                   </li>
 
                   <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faClipboard} /> <span>Lectures :</span> 8
+                    <FontAwesomeIcon className='iconBullent' icon={faClipboard} /> <span>Lectures :</span>{' '}
+                    {this.state.total_lecture}
                   </li>
 
                   <li>
@@ -104,7 +131,7 @@ class CourseDetails extends Component {
             </Col>
 
             <Col lg={6} md={6} sm={12}>
-              <Player src='https://media.w3.org/2010/05/sintel/trailer_hd.mp4'>
+              <Player src={this.state.video_url}>
                 <BigPlayButton position='center' />
               </Player>
             </Col>

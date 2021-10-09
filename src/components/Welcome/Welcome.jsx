@@ -26,17 +26,17 @@ class Welcome extends Component {
                     <Container className='text-center mt-5'>
                       <Row>
                         <Col lg={4} md={6} sm={12}>
-                          <img src={pageone} />
+                          <img alt='' src={pageone} />
                           <h1 className='serviceName'>Easy As it Gets </h1>
                           <p className='serviceDescription'>Lorem ipsum dolor</p>
                         </Col>
                         <Col lg={4} md={6} sm={12}>
-                          <img src={pagetwo} />
+                          <img alt='' src={pagetwo} />
                           <h1 className='serviceName'>Teach The way you want </h1>
                           <p className='serviceDescription'>Lorem ipsum dolor</p>
                         </Col>
                         <Col lg={4} md={6} sm={12}>
-                          <img src={pagethree} />
+                          <img alt='' src={pagethree} />
                           <h1 className='serviceName'>The small matter </h1>
                           <p className='serviceDescription'>Lorem ipsum dolor</p>
                         </Col>
@@ -46,7 +46,7 @@ class Welcome extends Component {
                         <Col lg={4} md={6} sm={12}>
                           <Row>
                             <Col lg={6} md={6} sm={12}>
-                              <img className='sideImg' src={imgone} />
+                              <img alt='' className='sideImg' src={imgone} />
                             </Col>
                             <Col lg={6} md={6} sm={12}>
                               <h5 className='text-justify homeIntro'>Development</h5>
@@ -57,7 +57,7 @@ class Welcome extends Component {
                         <Col lg={4} md={6} sm={12}>
                           <Row>
                             <Col lg={6} md={6} sm={12}>
-                              <img className='sideImg' src={imgtwo} />
+                              <img alt='' className='sideImg' src={imgtwo} />
                             </Col>
                             <Col lg={6} md={6} sm={12}>
                               <h5 className='text-justify homeIntro'>Web Design</h5>
@@ -68,7 +68,7 @@ class Welcome extends Component {
                         <Col lg={4} md={6} sm={12}>
                           <Row>
                             <Col lg={6} md={6} sm={12}>
-                              <img className='sideImg' src={imgthree} />
+                              <img alt='' className='sideImg' src={imgthree} />
                             </Col>
                             <Col lg={6} md={6} sm={12}>
                               <h5 className='text-justify homeIntro'>Ecommerce</h5>

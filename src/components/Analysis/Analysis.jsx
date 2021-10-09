@@ -1,21 +1,45 @@
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
-
+import AppUrl from '../../RestApi/AppUrl';
+import RestClient from '../../RestApi/RestClient';
+import ReactHtmlParser from 'react-html-parser';
 export class Analysis extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        { Technology: 'PHP', Projects: 80 },
-        { Technology: 'MySql', Projects: 90 },
-        { Technology: 'Laravel', Projects: 50 },
-        { Technology: 'React', Projects: 40 },
-        { Technology: 'Vue Js', Projects: 60 },
-        { Technology: 'JavaScript', Projects: 90 },
-        { Technology: 'Wordpress', Projects: 80 },
-      ],
+      MyData: [],
+      techDescription: [],
     };
+  }
+
+  componentDidMount() {
+    RestClient.GetRequest(AppUrl.ChartData)
+      .then((result) => {
+        // console.log(result);
+        if (result !== null) {
+          this.setState({
+            MyData: result,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    RestClient.GetRequest(AppUrl.HomeTechDesc)
+      .then((result) => {
+        // console.log(result);
+        if (result !== null) {
+          this.setState({
+            techDescription: result[0]['tech_description'],
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        // this.setState({ title: '????', subTitle: '????' });
+      });
   }
 
   render() {
@@ -27,7 +51,7 @@ export class Analysis extends Component {
           <Row>
             <Col lg={6} md={12} sm={12}>
               <ResponsiveContainer width='100%' height='100%'>
-                <BarChart width={150} height={40} data={this.state.data}>
+                <BarChart width={150} height={40} data={this.state.MyData}>
                   <XAxis dataKey='Technology' />
                   <Tooltip />
                   <Bar dataKey='Projects' fill='#051b35' />
@@ -36,16 +60,7 @@ export class Analysis extends Component {
             </Col>
 
             <Col lg={6} md={12} sm={12}>
-              <p className='text-justify serviceDescription'>
-                Hi! I'm Lalit Aryan. I'm a web developer with a serious love for coding and passionate Web Developer,
-                Programmer.
-                <br />
-                <br />I am working online for last 4 years and I have a lot of experience in web development. I have
-                worked with many different types of projects.
-                <br />
-                <br />I have worked with PHP, JavaScript, HTML, CSS, Bootstrap, JQuery, React, Wordpress, MySQL,
-                Laravel, Vue, Git, Github and many more.
-              </p>
+              <p className='text-justify serviceDescription'>{ReactHtmlParser(this.state.techDescription)}</p>
             </Col>
           </Row>
         </Container>

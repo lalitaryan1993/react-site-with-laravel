@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import AboutPage from '../pages/AboutPage';
 import AllCoursesPage from '../pages/AllCoursesPage';
 import AllServicePage from '../pages/AllServicePage';
@@ -31,8 +31,8 @@ class AppRouter extends Component {
           <Route exact path='/refund' component={RefundPage} />
           <Route exact path='/terms' component={TermsPage} />
           <Route exact path='/privacy' component={PrivacyPage} />
-          <Route exact path='/projectDetails' component={ProjectDetailPage} />
-          <Route exact path='/courseDetails' component={CourseDetailsPage} />
+          <Route exact path='/projectDetails/:projectID/:projectName' component={ProjectDetailPage} />
+          <Route exact path='/courseDetails/:courseID/:courseName' component={CourseDetailsPage} />
         </Switch>
       </>
     );

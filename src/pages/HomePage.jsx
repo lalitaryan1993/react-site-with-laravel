@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Video from 'video-react/lib/components/Video';
+import Video from '../components/Video/Video';
 import AboutMe from '../components/AboutMe/AboutMe';
 import Analysis from '../components/Analysis/Analysis';
 import ClientReview from '../components/ClientReview/ClientReview';

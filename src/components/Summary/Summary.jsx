@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
-import { Col, Container, Row, Button, Card } from 'react-bootstrap';
+import { Col, Container, Row, Card } from 'react-bootstrap';
 import { faCheckSquare, faGlobe, faLaptop, faStar } from '@fortawesome/free-solid-svg-icons';
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';

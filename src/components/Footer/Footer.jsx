@@ -4,7 +4,37 @@ import { Col, Row, Container } from 'react-bootstrap';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import AppUrl from '../../RestApi/AppUrl';
+import RestClient from '../../RestApi/RestClient';
+import ReactHtmlParser from 'react-html-parser';
 class Footer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      address: '...',
+      email: '...',
+      phone: '...',
+      facebook: '...',
+      twitter: '...',
+      instagram: '...',
+      footer_credit: '...',
+    };
+  }
+
+  componentDidMount() {
+    RestClient.GetRequest(AppUrl.FooterData)
+      .then((result) => {
+        // console.log(result);
+        if (result !== null) {
+          this.setState({
+            ...result[0],
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   render() {
     return (
       <>
@@ -14,13 +44,13 @@ class Footer extends Component {
               <h2 className='footerName text-center'>Follow Us </h2>
 
               <div className='social-container'>
-                <a className='facebook social' href='#'>
+                <a className='facebook social' href={this.state.facebook}>
                   <FontAwesomeIcon icon={faFacebook} size='2x' />
                 </a>
-                <a href='#' className='instagram social'>
+                <a href={this.state.instagram} className='instagram social'>
                   <FontAwesomeIcon icon={faInstagram} size='2x' />
                 </a>
-                <a href='#' className='twitter social'>
+                <a href={this.state.twitter} className='twitter social'>
                   <FontAwesomeIcon icon={faTwitter} size='2x' />
                 </a>
               </div>
@@ -29,9 +59,11 @@ class Footer extends Component {
             <Col lg='3' md={6} sm={12} className='p-5 text-justify'>
               <h2 className='footerName'>Address </h2>
               <p className='footerDescription'>
-                Munda Khera, Jhajjar, Haryana <br></br>
-                <FontAwesomeIcon icon={faEnvelope} /> Email : mail@lalitaryan.com<br></br>
-                <FontAwesomeIcon icon={faPhone} /> Phone : +91-8901505876<br></br>
+                {this.state.address} <br></br>
+                <FontAwesomeIcon icon={faEnvelope} /> Email : {this.state.email}
+                <br></br>
+                <FontAwesomeIcon icon={faPhone} /> Phone : {this.state.phone}
+                <br></br>
               </p>
             </Col>
 
@@ -71,7 +103,7 @@ class Footer extends Component {
 
         <Container fluid={true} className='text-center copyrightSection'>
           <a className='copyrightLink' href='#'>
-            © Copyright 2021 by Lalit Aryan, All Rights Reserved
+            {this.state.footer_credit}
           </a>
         </Container>
       </>
