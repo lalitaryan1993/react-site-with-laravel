@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
+import Loading from '../Loading/Loading';
 
 export class TopBanner extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ export class TopBanner extends Component {
     this.state = {
       title: '.....',
       subTitle: '.....',
+      loading: true,
     };
   }
 
@@ -20,6 +22,7 @@ export class TopBanner extends Component {
           this.setState({
             title: result[0]['home_title'],
             subTitle: result[0]['home_subtitle'],
+            loading: false,
           });
         }
       })
@@ -29,20 +32,30 @@ export class TopBanner extends Component {
       });
   }
   render() {
+    let loader = null;
+    if (this.state.loading === true) {
+      loader = <Loading />;
+    } else {
+      loader = null;
+    }
     return (
       <>
         <Container fluid className='topFixedBanner'>
           <div className='topBannerOverlay'>
             <Container className='topContent'>
               <Row>
-                <Col className='text-center'>
-                  <h1 className='topTitle' id='topTitle'>
-                    {this.state.title}
-                  </h1>
-                  <h4 className='topSubTitle'>{this.state.subTitle}</h4>
+                {loader !== null ? (
+                  loader
+                ) : (
+                  <Col className='text-center'>
+                    <h1 className='topTitle' id='topTitle'>
+                      {this.state.title}
+                    </h1>
+                    <h4 className='topSubTitle'>{this.state.subTitle}</h4>
 
-                  <Button variant='primary'>Learn More</Button>
-                </Col>
+                    <Button variant='primary'>Learn More</Button>
+                  </Col>
+                )}
               </Row>
             </Container>
           </div>

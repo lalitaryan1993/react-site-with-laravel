@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import projectDetails from '../../asset/images/pdetails.png';
+// import projectDetails from '../../asset/images/pdetails.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import AppUrl from '../../RestApi/AppUrl';

@@ -8,6 +8,7 @@ import { Player, BigPlayButton } from 'video-react';
 import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import ReactHtmlParser from 'react-html-parser';
+import Loading from '../Loading/Loading';
 
 class CourseDetails extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class CourseDetails extends Component {
       total_lecture: '',
       total_student: '',
       video_url: '',
+      loading: true,
     };
   }
   componentDidMount() {
@@ -33,6 +35,7 @@ class CourseDetails extends Component {
         if (result !== null) {
           this.setState({
             ...result,
+            loading: false,
           });
         }
         console.log(this.state);
@@ -43,103 +46,107 @@ class CourseDetails extends Component {
   }
 
   render() {
-    return (
-      <>
-        <Container className='mt-5'>
-          <Row>
-            <Col lg={8} md={6} sm={12}>
-              <h1 className='courseDetailsText'>{this.state.long_title}</h1>
-              <img alt='' className='courseDetailsImg' src={this.state.small_img} />
-              <br></br> <br></br>
-              <p className='CourseAllDescription'>{ReactHtmlParser(this.state.long_description)}</p>
-            </Col>
+    if (this.state.loading === true) {
+      return <Loading />;
+    } else {
+      return (
+        <>
+          <Container className='mt-5'>
+            <Row>
+              <Col lg={8} md={6} sm={12}>
+                <h1 className='courseDetailsText'>{this.state.long_title}</h1>
+                <img alt='' className='courseDetailsImg' src={this.state.small_img} />
+                <br></br> <br></br>
+                <p className='CourseAllDescription'>{ReactHtmlParser(this.state.long_description)}</p>
+              </Col>
 
-            <Col lg={4} md={6} sm={12}>
-              <div className='widget_feature'>
-                <h4 className='widget-title text-center'>Course Features</h4>
-                <hr />
-                <ul>
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faUser} /> <span> Enrolled :</span>{' '}
-                    {this.state.total_student} students
-                  </li>
+              <Col lg={4} md={6} sm={12}>
+                <div className='widget_feature'>
+                  <h4 className='widget-title text-center'>Course Features</h4>
+                  <hr />
+                  <ul>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faUser} /> <span> Enrolled :</span>{' '}
+                      {this.state.total_student} students
+                    </li>
 
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faClock} /> <span>Duration :</span>{' '}
-                    {this.state.total_duration} hours
-                  </li>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faClock} /> <span>Duration :</span>{' '}
+                      {this.state.total_duration} hours
+                    </li>
 
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faClipboard} /> <span>Lectures :</span>{' '}
-                    {this.state.total_lecture}
-                  </li>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faClipboard} /> <span>Lectures :</span>{' '}
+                      {this.state.total_lecture}
+                    </li>
 
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faClone} /> <span>Categories:</span> Technology
-                  </li>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faClone} /> <span>Categories:</span> Technology
+                    </li>
 
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faTags} /> <span>Tags:</span> Android, JavaScript
-                  </li>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faTags} /> <span>Tags:</span> Android, JavaScript
+                    </li>
 
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> <span>Instructor:</span> Lalit
-                    Aryan
-                  </li>
-                </ul>
-                <div className='price-wrap text-center'>
-                  <h5>
-                    Price:<span>$54.00</span>
-                  </h5>
-                  <Button variant='warning'>ENROLL COURSE</Button>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> <span>Instructor:</span> Lalit
+                      Aryan
+                    </li>
+                  </ul>
+                  <div className='price-wrap text-center'>
+                    <h5>
+                      Price:<span>$54.00</span>
+                    </h5>
+                    <Button variant='warning'>ENROLL COURSE</Button>
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+              </Col>
+            </Row>
+          </Container>
 
-        <br></br>
-        <br></br>
-        <Container>
-          <Row>
-            <Col lg={6} md={6} sm={12}>
-              <div className='widget_feature'>
-                <h1 className='courseDetailsText'> Skill You Need </h1>
-                <hr />
-                <ul>
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> Metus interdum metus
-                  </li>
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> Ligula cur maecenas
-                  </li>
+          <br></br>
+          <br></br>
+          <Container>
+            <Row>
+              <Col lg={6} md={6} sm={12}>
+                <div className='widget_feature'>
+                  <h1 className='courseDetailsText'> Skill You Need </h1>
+                  <hr />
+                  <ul>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> Metus interdum metus
+                    </li>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> Ligula cur maecenas
+                    </li>
 
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> Metus interdum metus
-                  </li>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> Metus interdum metus
+                    </li>
 
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} />
-                    Ligula cur maecenass
-                  </li>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} />
+                      Ligula cur maecenass
+                    </li>
 
-                  <li>
-                    <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> Metus interdum metus
-                  </li>
-                </ul>
-              </div>
-            </Col>
+                    <li>
+                      <FontAwesomeIcon className='iconBullent' icon={faCheckSquare} /> Metus interdum metus
+                    </li>
+                  </ul>
+                </div>
+              </Col>
 
-            <Col lg={6} md={6} sm={12}>
-              <Player src={this.state.video_url}>
-                <BigPlayButton position='center' />
-              </Player>
-            </Col>
-          </Row>
-        </Container>
-      </>
-    );
-  }
+              <Col lg={6} md={6} sm={12}>
+                <Player src={this.state.video_url}>
+                  <BigPlayButton position='center' />
+                </Player>
+              </Col>
+            </Row>
+          </Container>
+        </>
+      );
+    }
+  } // end of render
 }
 
 export default CourseDetails;

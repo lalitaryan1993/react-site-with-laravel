@@ -5,11 +5,13 @@ import ecommerceIcon from '../../asset/images/ecommerce.png';
 import webIcon from '../../asset/images/web.png';
 import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
+import Loading from '../Loading/Loading';
 export class Services extends Component {
   constructor(props) {
     super(props);
     this.state = {
       MyData: [],
+      loading: true,
     };
   }
 
@@ -20,6 +22,7 @@ export class Services extends Component {
         if (result !== null) {
           this.setState({
             MyData: result,
+            loading: false,
           });
         }
       })
@@ -30,27 +33,31 @@ export class Services extends Component {
   }
 
   render() {
-    const MyList = this.state.MyData;
-    const MyView = MyList.map((item, index) => {
+    if (this.state.loading === true) {
+      return <Loading />;
+    } else {
+      const MyList = this.state.MyData;
+      const MyView = MyList.map((item, index) => {
+        return (
+          <Col key={index} lg={4} md={6} sm={12}>
+            <div className='serviceCard text-center'>
+              <img className='designIcon' src={item.service_logo} alt='design Icon' />
+              <h2 className='serviceName'>{item.service_name}</h2>
+              <p className='serviceDescription'>{item.service_description}</p>
+            </div>
+          </Col>
+        );
+      });
       return (
-        <Col key={index} lg={4} md={6} sm={12}>
-          <div className='serviceCard text-center'>
-            <img className='designIcon' src={item.service_logo} alt='design Icon' />
-            <h2 className='serviceName'>{item.service_name}</h2>
-            <p className='serviceDescription'>{item.service_description}</p>
-          </div>
-        </Col>
+        <>
+          <Container>
+            <h1 className='serviceMainTitle'>OUR SERVICES</h1>
+            <div className='bottomBar'></div>
+            <Row>{MyView}</Row>
+          </Container>
+        </>
       );
-    });
-    return (
-      <>
-        <Container>
-          <h1 className='serviceMainTitle'>OUR SERVICES</h1>
-          <div className='bottomBar'></div>
-          <Row>{MyView}</Row>
-        </Container>
-      </>
-    );
+    }
   }
 }
 

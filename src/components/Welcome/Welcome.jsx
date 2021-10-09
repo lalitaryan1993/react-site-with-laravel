@@ -7,6 +7,7 @@ import pagethree from '../../asset/images/page3.png';
 import imgone from '../../asset/images/19.png';
 import imgtwo from '../../asset/images/20.png';
 import imgthree from '../../asset/images/21.png';
+import Loading from '../Loading/Loading';
 
 class Welcome extends Component {
   render() {
