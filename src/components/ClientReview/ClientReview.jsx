@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import Loading from '../Loading/Loading';
-
+import LightSpeed from 'react-reveal/LightSpeed';
 export class ClientReview extends Component {
   constructor(props) {
     super(props);
@@ -41,13 +41,15 @@ export class ClientReview extends Component {
       const MyView = MyList.map((item, index) => {
         return (
           <div key={index}>
-            <Row className='text-center justify-content-center'>
-              <Col lg={6} md={6} sm={12}>
-                <img className='circleImg' alt='client review' src={item.client_img} />
-                <h2 className='reviewName'>{item.client_title}</h2>
-                <p className='reviewDescription'>{item.client_description} </p>
-              </Col>
-            </Row>
+            <LightSpeed right>
+              <Row className='text-center justify-content-center'>
+                <Col lg={6} md={6} sm={12}>
+                  <img className='circleImg' alt='client review' src={item.client_img} />
+                  <h2 className='reviewName'>{item.client_title}</h2>
+                  <p className='reviewDescription'>{item.client_description} </p>
+                </Col>
+              </Row>
+            </LightSpeed>
           </div>
         );
       });

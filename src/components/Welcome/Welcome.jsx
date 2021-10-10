@@ -8,7 +8,7 @@ import imgone from '../../asset/images/19.png';
 import imgtwo from '../../asset/images/20.png';
 import imgthree from '../../asset/images/21.png';
 import Loading from '../Loading/Loading';
-
+import Zoom from 'react-reveal/Zoom';
 class Welcome extends Component {
   render() {
     return (
@@ -27,19 +27,26 @@ class Welcome extends Component {
                     <Container className='text-center mt-5'>
                       <Row>
                         <Col lg={4} md={6} sm={12}>
-                          <img alt='' src={pageone} />
-                          <h1 className='serviceName'>Easy As it Gets </h1>
-                          <p className='serviceDescription'>Lorem ipsum dolor</p>
+                          {' '}
+                          <Zoom top>
+                            <img alt='' src={pageone} />
+                            <h1 className='serviceName'>Easy As it Gets </h1>
+                            <p className='serviceDescription'>Lorem ipsum dolor</p>
+                          </Zoom>
                         </Col>
                         <Col lg={4} md={6} sm={12}>
-                          <img alt='' src={pagetwo} />
-                          <h1 className='serviceName'>Teach The way you want </h1>
-                          <p className='serviceDescription'>Lorem ipsum dolor</p>
+                          <Zoom top>
+                            <img alt='' src={pagetwo} />
+                            <h1 className='serviceName'>Teach The way you want </h1>
+                            <p className='serviceDescription'>Lorem ipsum dolor</p>
+                          </Zoom>
                         </Col>
                         <Col lg={4} md={6} sm={12}>
-                          <img alt='' src={pagethree} />
-                          <h1 className='serviceName'>The small matter </h1>
-                          <p className='serviceDescription'>Lorem ipsum dolor</p>
+                          <Zoom top>
+                            <img alt='' src={pagethree} />
+                            <h1 className='serviceName'>The small matter </h1>
+                            <p className='serviceDescription'>Lorem ipsum dolor</p>
+                          </Zoom>
                         </Col>
                       </Row>
                       {/* // Intro Footer Start  */}

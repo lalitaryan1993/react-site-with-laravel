@@ -11,6 +11,7 @@ import PrivacyPage from '../pages/PrivacyPage';
 import ProjectDetailPage from '../pages/ProjectDetailPage';
 import RefundPage from '../pages/RefundPage';
 import TermsPage from '../pages/TermsPage';
+import PageNotFound from '../pages/PageNotFound';
 class AppRouter extends Component {
   render() {
     return (
@@ -33,6 +34,8 @@ class AppRouter extends Component {
           <Route exact path='/privacy' component={PrivacyPage} />
           <Route exact path='/projectDetails/:projectID/:projectName' component={ProjectDetailPage} />
           <Route exact path='/courseDetails/:courseID/:courseName' component={CourseDetailsPage} />
+
+          <Route component={PageNotFound} />
         </Switch>
       </>
     );

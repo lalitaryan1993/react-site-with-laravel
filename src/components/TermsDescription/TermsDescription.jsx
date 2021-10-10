@@ -4,7 +4,7 @@ import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
-
+import Zoom from 'react-reveal/Zoom';
 export class TermsDescription extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +38,7 @@ export class TermsDescription extends Component {
           <Container className='mt-2'>
             <Row>
               <Col lg={12} md={12} sm={12}>
-                {ReactHtmlParser(this.state.termsDesc)}
+                <Zoom bottom>{ReactHtmlParser(this.state.termsDesc)}</Zoom>
               </Col>
             </Row>
           </Container>

@@ -8,6 +8,7 @@ import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
+import Zoom from 'react-reveal/Zoom';
 
 class Video extends Component {
   constructor() {
@@ -47,17 +48,19 @@ class Video extends Component {
       return (
         <>
           <Container className='text-center'>
-            <h1 className='serviceMainTitle'>OUR VIDEOS</h1>
-            <div className='bottomBar'></div>
-            <Row>
-              <Col lg={6} md={6} sm={12} className='videoText'>
-                <p className='serviceDescription text-justify'>{ReactHtmlParser(this.state.video_description)}</p>
-              </Col>
+            <Zoom top>
+              <h1 className='serviceMainTitle'>OUR VIDEOS</h1>
+              <div className='bottomBar'></div>
+              <Row>
+                <Col lg={6} md={6} sm={12} className='videoText'>
+                  <p className='serviceDescription text-justify'>{ReactHtmlParser(this.state.video_description)}</p>
+                </Col>
 
-              <Col lg={6} md={6} sm={12} className='videoCard'>
-                <FontAwesomeIcon onClick={this.modalOpen} className='iconProject' icon={faVideoSlash} />
-              </Col>
-            </Row>
+                <Col lg={6} md={6} sm={12} className='videoCard'>
+                  <FontAwesomeIcon onClick={this.modalOpen} className='iconProject' icon={faVideoSlash} />
+                </Col>
+              </Row>
+            </Zoom>
           </Container>
 
           <Modal size='lg' show={this.state.show} onHide={this.modalClose}>

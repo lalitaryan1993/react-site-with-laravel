@@ -4,7 +4,7 @@ import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
-
+import Fade from 'react-reveal/Fade';
 class PrivacyDescription extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +38,9 @@ class PrivacyDescription extends Component {
           <Container className='mt-5'>
             <Row>
               <Col lg={12} md={12} sm={12}>
-                {ReactHtmlParser(this.state.aboutPrivacy)}
+                <Fade bottom big cascade>
+                  {ReactHtmlParser(this.state.aboutPrivacy)}
+                </Fade>
               </Col>
             </Row>
           </Container>

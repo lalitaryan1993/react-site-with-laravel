@@ -5,6 +5,7 @@ import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import Loading from '../Loading/Loading';
 import WentWrong from '../WentWrong/WentWrong';
+import Zoom from 'react-reveal/Zoom';
 
 class AllCourses extends Component {
   constructor(props) {
@@ -46,19 +47,21 @@ class AllCourses extends Component {
       const MyView = MyList.map((item, index) => {
         return (
           <Col lg={6} md={12} sm={12} key={index}>
-            <Row>
-              <Col lg={6} md={6} sm={12} className='p-2'>
-                <img className='courseImg' alt='course' src={item.small_img} />
-              </Col>
+            <Zoom top>
+              <Row>
+                <Col lg={6} md={6} sm={12} className='p-2'>
+                  <img className='courseImg' alt='course' src={item.small_img} />
+                </Col>
 
-              <Col lg={6} md={6} sm={12}>
-                <h5 className='text-justify serviceName'>{item.short_title}</h5>
-                <p className='text-justify serviceDescription'>{item.short_description}</p>
-                <Link className='courseViewMore float-left' to={`/courseDetails/${item.id}/${item.long_title}`}>
-                  View Details
-                </Link>
-              </Col>
-            </Row>
+                <Col lg={6} md={6} sm={12}>
+                  <h5 className='text-justify serviceName'>{item.short_title}</h5>
+                  <p className='text-justify serviceDescription'>{item.short_description}</p>
+                  <Link className='courseViewMore float-left' to={`/courseDetails/${item.id}/${item.long_title}`}>
+                    View Details
+                  </Link>
+                </Col>
+              </Row>
+            </Zoom>
           </Col>
         );
       });

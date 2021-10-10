@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import Loading from '../Loading/Loading';
+import Zoom from 'react-reveal/Zoom';
+
 class AllProjects extends Component {
   constructor(props) {
     super(props);
@@ -36,19 +38,21 @@ class AllProjects extends Component {
       const MyView = MyList.map((item, index) => {
         return (
           <Col lg={4} key={index} md={6} sm={12}>
-            <Card className='projectCard'>
-              <Card.Img variant='top' src={item.img_one} />
-              <Card.Body>
-                <Card.Title className='serviceName'>{item.project_name}</Card.Title>
-                <Card.Text className='serviceDescription'>{item.project_description}</Card.Text>
-                <Button variant='primary'>
-                  <Link className='link-style' to={`/projectDetails/${item.id}/${item.project_name}`}>
-                    {' '}
-                    View More{' '}
-                  </Link>{' '}
-                </Button>
-              </Card.Body>
-            </Card>
+            <Zoom top>
+              <Card className='projectCard'>
+                <Card.Img variant='top' src={item.img_one} />
+                <Card.Body>
+                  <Card.Title className='serviceName'>{item.project_name}</Card.Title>
+                  <Card.Text className='serviceDescription'>{item.project_description}</Card.Text>
+                  <Button variant='primary'>
+                    <Link className='link-style' to={`/projectDetails/${item.id}/${item.project_name}`}>
+                      {' '}
+                      View More{' '}
+                    </Link>{' '}
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Zoom>
           </Col>
         );
       });

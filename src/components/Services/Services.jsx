@@ -6,6 +6,8 @@ import webIcon from '../../asset/images/web.png';
 import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import Loading from '../Loading/Loading';
+import Zoom from 'react-reveal/Zoom';
+import LightSpeed from 'react-reveal/LightSpeed';
 export class Services extends Component {
   constructor(props) {
     super(props);
@@ -40,19 +42,23 @@ export class Services extends Component {
       const MyView = MyList.map((item, index) => {
         return (
           <Col key={index} lg={4} md={6} sm={12}>
-            <div className='serviceCard text-center'>
-              <img className='designIcon' src={item.service_logo} alt='design Icon' />
-              <h2 className='serviceName'>{item.service_name}</h2>
-              <p className='serviceDescription'>{item.service_description}</p>
-            </div>
+            <Zoom bottom>
+              <div className='serviceCard text-center'>
+                <img className='designIcon' src={item.service_logo} alt='design Icon' />
+                <h2 className='serviceName'>{item.service_name}</h2>
+                <p className='serviceDescription'>{item.service_description}</p>
+              </div>
+            </Zoom>
           </Col>
         );
       });
       return (
         <>
           <Container>
-            <h1 className='serviceMainTitle'>OUR SERVICES</h1>
-            <div className='bottomBar'></div>
+            <LightSpeed right>
+              <h1 className='serviceMainTitle'>OUR SERVICES</h1>
+              <div className='bottomBar'></div>
+            </LightSpeed>
             <Row>{MyView}</Row>
           </Container>
         </>

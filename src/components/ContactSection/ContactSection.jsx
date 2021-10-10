@@ -5,7 +5,7 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import Loading from '../Loading/Loading';
-
+import Bounce from 'react-reveal/Bounce';
 class ContactSection extends Component {
   constructor(props) {
     super(props);
@@ -62,41 +62,45 @@ class ContactSection extends Component {
           <Container className='mt-5'>
             <Row>
               <Col lg={6} md={6} sm={12}>
-                <h1 className='serviceName'>Quick Connect</h1>
+                <Bounce left>
+                  <h1 className='serviceName'>Quick Connect</h1>
 
-                <Form>
-                  <Form.Group>
-                    <Form.Label>Your Name </Form.Label>
-                    <Form.Control id='name' type='text' placeholder='Enter Your Name' />
-                  </Form.Group>
+                  <Form>
+                    <Form.Group>
+                      <Form.Label>Your Name </Form.Label>
+                      <Form.Control id='name' type='text' placeholder='Enter Your Name' />
+                    </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>Your Email </Form.Label>
-                    <Form.Control id='email' type='email' placeholder='Enter Your email' />
-                  </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Your Email </Form.Label>
+                      <Form.Control id='email' type='email' placeholder='Enter Your email' />
+                    </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>Message </Form.Label>
-                    <Form.Control id='message' as='textarea' rows={3} />
-                  </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Message </Form.Label>
+                      <Form.Control id='message' as='textarea' rows={3} />
+                    </Form.Group>
 
-                  <Button variant='primary' type='button' onClick={this.sendContact}>
-                    Submit
-                  </Button>
-                </Form>
+                    <Button variant='primary' type='button' onClick={this.sendContact}>
+                      Submit
+                    </Button>
+                  </Form>
+                </Bounce>
               </Col>
 
               <Col lg={6} md={6} sm={12}>
-                <h1 className='serviceName'>Discuss Now</h1>
+                <Bounce right>
+                  <h1 className='serviceName'>Discuss Now</h1>
 
-                <p className='serviceDescription'>
-                  {this.state.address}
-                  <br></br>
-                  <FontAwesomeIcon icon={faEnvelope} /> Email : {this.state.email}
-                  <br></br>
-                  <FontAwesomeIcon icon={faPhone} /> Phone : {this.state.phone}
-                  <br></br>
-                </p>
+                  <p className='serviceDescription'>
+                    {this.state.address}
+                    <br></br>
+                    <FontAwesomeIcon icon={faEnvelope} /> Email : {this.state.email}
+                    <br></br>
+                    <FontAwesomeIcon icon={faPhone} /> Phone : {this.state.phone}
+                    <br></br>
+                  </p>
+                </Bounce>
               </Col>
             </Row>
           </Container>

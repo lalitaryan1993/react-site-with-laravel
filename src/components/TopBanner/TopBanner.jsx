@@ -3,7 +3,7 @@ import { Col, Container, Row, Button } from 'react-bootstrap';
 import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 import Loading from '../Loading/Loading';
-
+import Fade from 'react-reveal/Fade';
 export class TopBanner extends Component {
   constructor(props) {
     super(props);
@@ -48,11 +48,12 @@ export class TopBanner extends Component {
                   loader
                 ) : (
                   <Col className='text-center'>
-                    <h1 className='topTitle' id='topTitle'>
-                      {this.state.title}
-                    </h1>
-                    <h4 className='topSubTitle'>{this.state.subTitle}</h4>
-
+                    <Fade top>
+                      <h1 className='topTitle' id='topTitle'>
+                        {this.state.title}
+                      </h1>
+                      <h4 className='topSubTitle'>{this.state.subTitle}</h4>
+                    </Fade>
                     <Button variant='primary'>Learn More</Button>
                   </Col>
                 )}

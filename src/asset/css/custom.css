@@ -610,3 +610,11 @@ a.instagram {
   width: 180px;
   height: 180px;
 }
+
+/* Not Found Page */
+.notFound {
+  color: #051b35;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+}
